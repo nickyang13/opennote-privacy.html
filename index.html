@@ -4,302 +4,425 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OpenNote AI Privacy Policy</title>
-  <meta name="description" content="OpenNote AI Privacy Policy">
+  <meta name="description" content="Privacy Policy for OpenNote AI, a local-first notes, recording, document, handwriting, and AI assistant app.">
   <style>
     :root {
       color-scheme: light dark;
-      --bg: #f5f5f7;
-      --card: rgba(255, 255, 255, 0.86);
-      --ink: #111114;
+      --ink: #151518;
       --muted: #63636b;
-      --line: rgba(60, 60, 67, 0.14);
-      --accent: #0a84ff;
-      --soft: rgba(10, 132, 255, 0.10);
-      --shadow: 0 20px 60px rgba(20, 20, 30, 0.08);
+      --line: #e8e8ed;
+      --bg: #f7f7f9;
+      --card: #ffffff;
+      --accent: #6047ff;
+      --soft-accent: rgba(96, 71, 255, 0.10);
+      --warning: #b45309;
+      --soft-warning: rgba(245, 158, 11, 0.12);
+      --shadow: rgba(20, 20, 30, 0.06);
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #0f0f12;
-        --card: rgba(28, 28, 31, 0.86);
         --ink: #f5f5f7;
         --muted: #a1a1aa;
-        --line: rgba(235, 235, 245, 0.14);
-        --accent: #66aaff;
-        --soft: rgba(102, 170, 255, 0.16);
-        --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        --line: rgba(255, 255, 255, 0.14);
+        --bg: #050507;
+        --card: #1c1c1e;
+        --accent: #9b8cff;
+        --soft-accent: rgba(155, 140, 255, 0.16);
+        --warning: #fbbf24;
+        --soft-warning: rgba(251, 191, 36, 0.14);
+        --shadow: rgba(0, 0, 0, 0.35);
       }
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--ink);
-      background:
-        radial-gradient(circle at top left, var(--soft), transparent 32rem),
-        var(--bg);
-      line-height: 1.62;
+      background: var(--bg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     main {
-      width: min(920px, 100%);
+      max-width: 900px;
       margin: 0 auto;
-      padding: 48px 20px 80px;
+      padding: 56px 22px 80px;
     }
 
-    .hero, .card {
+    .page {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 26px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
+      border-radius: 22px;
+      padding: 42px;
+      box-shadow: 0 18px 50px var(--shadow);
     }
 
-    .hero { padding: 34px; margin-bottom: 18px; }
-    .card { padding: 24px; margin-top: 14px; }
-    .eyebrow {
-      margin: 0 0 10px;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       color: var(--accent);
-      font-size: 13px;
+      background: var(--soft-accent);
+      border-radius: 999px;
       font-weight: 700;
-      letter-spacing: .04em;
+      letter-spacing: 0.02em;
       text-transform: uppercase;
+      font-size: 13px;
+      margin: 0 0 14px;
+      padding: 6px 12px;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(34px, 6vw, 56px);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
+      margin: 0 0 8px;
+      font-size: clamp(32px, 5vw, 46px);
+      line-height: 1.12;
     }
 
     h2 {
-      margin: 0 0 10px;
-      font-size: 21px;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
+      margin: 36px 0 12px;
+      font-size: 22px;
+      line-height: 1.25;
     }
 
-    p { margin: 0 0 12px; font-size: 16px; }
-    p:last-child { margin-bottom: 0; }
-    ul { margin: 8px 0 0; padding-left: 22px; }
-    li { margin: 6px 0; }
-    .muted { color: var(--muted); }
-    .statement {
-      margin-top: 20px;
-      padding: 18px;
-      border-radius: 20px;
-      background: var(--soft);
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    p,
+    li {
+      font-size: 16px;
       color: var(--ink);
-      font-weight: 700;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .meta,
+    .muted {
+      color: var(--muted);
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
+      gap: 12px;
+      margin: 28px 0 34px;
     }
 
-    nav a, .pill {
-      display: inline-flex;
-      align-items: center;
+    nav a {
       border: 1px solid var(--line);
       border-radius: 999px;
       padding: 8px 13px;
-      color: var(--ink);
-      background: rgba(255, 255, 255, 0.46);
       text-decoration: none;
-      font-size: 14px;
+      color: var(--ink);
+      background: var(--card);
       font-weight: 600;
     }
 
-    @media (prefers-color-scheme: dark) {
-      nav a, .pill { background: rgba(255, 255, 255, 0.06); }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
     }
 
-    a { color: var(--accent); }
-    .footer { margin-top: 24px; color: var(--muted); font-size: 14px; text-align: center; }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin-top: 10px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: var(--soft-accent);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 16px 0;
+    }
+
+    .note {
+      border-left: 4px solid var(--warning);
+      background: var(--soft-warning);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin: 16px 0;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 28px;
+    }
+
+    strong {
+      font-weight: 750;
+    }
 
     @media (max-width: 640px) {
-      main { padding: 28px 14px 56px; }
-      .hero { padding: 26px 22px; border-radius: 24px; }
-      .card { padding: 20px; border-radius: 22px; }
+      main {
+        padding: 28px 16px 56px;
+      }
+
+      .page {
+        padding: 26px;
+        border-radius: 16px;
+      }
+
+      nav {
+        gap: 8px;
+      }
+
+      nav a {
+        font-size: 14px;
+        padding: 7px 11px;
+      }
     }
   </style>
 </head>
+
 <body>
   <main>
-    <section class="hero">
-      <p class="eyebrow">OpenNote AI</p>
+    <section class="page">
+      <p class="brand">OpenNote AI</p>
       <h1>Privacy Policy</h1>
-      <p class="muted">Last updated: June 13, 2026</p>
-      <p>
-        OpenNote AI is a local-first notes, documents, recording, handwriting, and AI assistant app.
-        This policy explains what information the app handles and how that information is protected.
-      </p>
-      <p class="statement">
-        OpenNote AI does not send users' notes, documents, PDFs, recordings, handwriting, transcripts,
-        prompts, or AI conversations to third-party AI services.
-      </p>
+      <p class="meta">Last updated: June 13, 2026</p>
+
       <nav aria-label="Legal pages">
         <a href="./">Privacy Policy</a>
         <a href="./terms.html">Terms of Use</a>
         <a href="./support.html">Support</a>
       </nav>
-    </section>
 
-    <section class="card">
+      <p>
+        OpenNote AI is designed as a local-first notes, recording, document, handwriting, and AI assistant app.
+        This Privacy Policy explains what information OpenNote AI handles, how it is used, and how your private content is protected.
+      </p>
+
+      <div class="callout">
+        <p>
+          <strong>OpenNote AI does not send your notes, documents, PDFs, recordings, handwriting, transcripts, prompts,
+          or AI conversations to third-party AI services.</strong>
+        </p>
+      </div>
+
       <h2>1. Overview</h2>
       <p>
-        OpenNote AI helps you create and organize notes, text documents, PDFs, handwriting, audio recordings,
-        transcripts, and AI-assisted outputs. The app is designed around local-first processing and user control.
+        OpenNote AI helps users create notes, manage documents, work with PDFs and imported files, record audio,
+        organize information, use handwriting tools, and use AI-assisted features where available.
       </p>
-    </section>
+      <p>
+        Our privacy approach is simple: your private content should stay under your control.
+        OpenNote AI does not sell your personal information and does not use your private content for advertising.
+      </p>
 
-    <section class="card">
       <h2>2. Local-First AI Processing</h2>
       <p>
-        OpenNote AI does not send users' notes, documents, PDFs, recordings, handwriting, transcripts,
-        prompts, or AI conversations to third-party AI services.
+        OpenNote AI is designed to be local-first. AI-assisted features are designed to run on your device when available.
       </p>
-      <p>AI features are designed to run on-device when available.</p>
       <p>
-        If a future version adds optional cloud AI that sends user-selected content to a third-party AI service,
-        the app will clearly explain what data is sent, identify the service provider, and ask for permission
-        before sending that content.
+        OpenNote AI does not send your notes, documents, PDFs, recordings, handwriting, transcripts, prompts,
+        or AI conversations to OpenAI, Google Gemini, Anthropic Claude, OpenRouter, Replicate, Hugging Face Inference API,
+        or any other third-party AI service for AI processing.
       </p>
-    </section>
+      <p>
+        OpenNote AI does not use your notes, documents, PDFs, recordings, handwriting, transcripts, prompts,
+        or AI conversations to train third-party AI models.
+      </p>
+      <div class="note">
+        <p>
+          If a future version of OpenNote AI adds an optional online AI feature that sends user-selected content
+          to an external AI provider, the app will clearly explain what data is sent, identify the service provider,
+          and ask for your permission before sending that content.
+        </p>
+      </div>
 
-    <section class="card">
-      <h2>3. Notes, Documents, Recordings, and Transcripts</h2>
-      <p>OpenNote AI may handle:</p>
+      <h2>3. Notes, Documents, Recordings, Handwriting, and Transcripts</h2>
+      <p>
+        OpenNote AI may handle content that you create, import, record, or generate inside the app, including:
+      </p>
       <ul>
-        <li>notes and text documents</li>
+        <li>Notes and text documents</li>
         <li>PDFs and imported files</li>
-        <li>handwriting and Apple Pencil content</li>
-        <li>audio recordings</li>
-        <li>transcripts</li>
-        <li>AI-assisted outputs generated inside the app</li>
-        <li>folders, tags, organization data, and preferences</li>
+        <li>Handwriting and Apple Pencil content</li>
+        <li>Audio recordings</li>
+        <li>Transcripts and translated text</li>
+        <li>Summaries and AI-assisted outputs generated inside the app</li>
+        <li>Folders, tags, organization data, and app preferences</li>
       </ul>
       <p>
-        This content is used only for app functionality. It is not sold, not used for advertising,
-        and not sent to third-party AI services.
+        This content is used to provide OpenNote AI's note-taking, document management, recording, handwriting,
+        organization, sync, and AI-assisted features.
       </p>
-    </section>
+      <p>
+        OpenNote AI does not sell this content, does not use it for advertising, and does not send it to third-party AI services.
+      </p>
 
-    <section class="card">
       <h2>4. Optional Local AI Model Downloads</h2>
       <p>
-        Optional local AI model downloads may contact model file hosts such as Hugging Face, ModelScope,
-        GitHub Releases, or another configured file hosting source only to download model files.
+        OpenNote AI may allow you to download optional local AI model files, such as Gemma-compatible models,
+        so that AI features can run on your device.
       </p>
-      <p>Model hosts may receive standard network information such as:</p>
+      <p>
+        When you choose to download a local AI model, your device may contact a model file host or mirror,
+        such as Hugging Face, ModelScope, GitHub Releases, or another configured download source, only to download the model file.
+      </p>
+      <p>
+        These model file hosts may receive standard network information normally included in a download request, such as:
+      </p>
       <ul>
         <li>IP address</li>
-        <li>request time</li>
-        <li>requested file URL</li>
-        <li>normal device/network metadata included in a download request</li>
+        <li>Request time</li>
+        <li>Requested file URL</li>
+        <li>Browser, device, or network metadata normally included in the download request</li>
       </ul>
-      <p>
-        OpenNote AI does not send users' notes, documents, PDFs, recordings, handwriting, transcripts,
-        prompts, or AI conversations to model file hosts.
-      </p>
-    </section>
+      <div class="callout">
+        <p>
+          OpenNote AI does not send your notes, documents, PDFs, recordings, handwriting, transcripts,
+          prompts, or AI conversations to model file hosts.
+        </p>
+      </div>
 
-    <section class="card">
       <h2>5. Speech Recognition, Transcription, and Translation</h2>
       <p>
-        OpenNote AI prefers on-device processing where available. If Apple system frameworks are used,
-        processing is handled according to Apple's system privacy protections and device permissions.
+        OpenNote AI is designed to prefer on-device processing where available.
       </p>
-    </section>
+      <p>
+        If Apple system frameworks are used for speech recognition, dictation, transcription, translation,
+        or related device features, those features are handled according to Apple's system privacy protections
+        and the permissions you grant on your device.
+      </p>
+      <p>
+        OpenNote AI does not send recordings, transcripts, translated text, or related user content to third-party AI services.
+      </p>
 
-    <section class="card">
       <h2>6. Sign in with Apple and Account Data</h2>
       <p>
-        If you sign in with Apple, Apple may provide an app-specific user identifier and, depending on
-        your choice, your name or email address. OpenNote AI uses this information only for account access,
-        sync-related functionality where available, account management, and paid feature access.
+        If you choose to sign in with Apple, Apple may provide OpenNote AI with an app-specific user identifier
+        and, depending on your Apple ID settings and choices, your name or email address.
       </p>
-    </section>
+      <p>
+        OpenNote AI uses this information only for account access, account management, sync-related functionality where available,
+        and paid feature access.
+      </p>
+      <p>
+        OpenNote AI does not use Sign in with Apple information for advertising or cross-app tracking.
+      </p>
 
-    <section class="card">
       <h2>7. Subscriptions and Purchases</h2>
       <p>
-        Payments are processed by Apple through the App Store. OpenNote AI may receive subscription status
-        needed to unlock Plus, Pro, or other paid features.
+        If you purchase a subscription or paid feature, payment is processed by Apple through the App Store.
+        OpenNote AI does not receive your full payment card details.
       </p>
-    </section>
+      <p>
+        OpenNote AI may receive subscription status information needed to unlock Plus, Pro, or other paid features.
+      </p>
+      <p>
+        You can manage or cancel your subscription in your Apple ID App Store account settings.
+      </p>
 
-    <section class="card">
       <h2>8. iCloud and Sync</h2>
       <p>
-        If sync is available and enabled, user data may be stored or synced through Apple iCloud or the
-        configured sync service only to provide sync across the user's devices. Synced content is not used
-        for advertising and not sent to third-party AI services.
+        If OpenNote AI sync is available and you choose to use it, your account and app data may be stored or synced
+        through Apple iCloud or the configured sync service only to provide sync across your devices.
       </p>
-    </section>
-
-    <section class="card">
-      <h2>9. Data Not Sold or Used for Tracking</h2>
-      <p>OpenNote AI does not sell personal information.</p>
-      <p>OpenNote AI does not use advertising SDKs, cross-app tracking, or third-party tracking pixels.</p>
       <p>
-        OpenNote AI does not use users' notes, documents, PDFs, recordings, handwriting, transcripts,
-        prompts, or AI conversations to train third-party AI models.
+        Sync data is used for app functionality, such as keeping your notes, folders, preferences, and paid feature access
+        available across supported devices.
       </p>
-    </section>
+      <p>
+        OpenNote AI does not use synced user content for advertising and does not send synced user content to third-party AI services.
+      </p>
 
-    <section class="card">
+      <h2>9. Data We Do Not Sell or Use for Tracking</h2>
+      <p>
+        OpenNote AI does not sell your personal information.
+      </p>
+      <p>
+        OpenNote AI does not use advertising SDKs, cross-app tracking, or third-party tracking pixels.
+      </p>
+      <p>
+        OpenNote AI does not use your notes, documents, PDFs, recordings, handwriting, transcripts, prompts,
+        or AI conversations for advertising, resale, or third-party AI model training.
+      </p>
+
       <h2>10. Diagnostics and App Performance</h2>
       <p>
-        OpenNote AI may receive limited diagnostic or crash information if provided by Apple or platform tools.
-        This information is used only to improve app stability and performance.
+        OpenNote AI may receive limited diagnostic, crash, or performance information if provided by Apple or platform tools.
+        This information is used to improve app stability, performance, and compatibility.
       </p>
-    </section>
+      <p>
+        Diagnostic information is not used for advertising or tracking.
+      </p>
+      <p>
+        If OpenNote AI adds a third-party analytics or crash reporting service in the future, this Privacy Policy
+        and the App Store privacy information will be updated accordingly.
+      </p>
 
-    <section class="card">
-      <h2>11. Account Deletion</h2>
-      <p>Users can delete their OpenNote AI account directly inside the app:</p>
-      <p><strong>Settings &gt; Account &gt; Delete Account</strong></p>
-    </section>
+      <h2>11. Data Retention and Account Deletion</h2>
+      <p>
+        Content stored locally in OpenNote AI remains on your device until you delete it, uninstall the app,
+        or remove it through device storage and backup controls.
+      </p>
+      <p>
+        Users can delete their OpenNote AI account directly inside the app:
+      </p>
+      <div class="callout">
+        <p><strong>Settings &gt; Account &gt; Delete Account</strong></p>
+      </div>
+      <p>
+        Deleting your account removes account-related data according to the in-app account deletion flow.
+        After deletion, you may lose access to account-based sync and account-based app functionality.
+        App Store subscription management remains subject to Apple's App Store subscription rules and your Apple ID settings.
+      </p>
 
-    <section class="card">
       <h2>12. Data Security</h2>
       <p>
         OpenNote AI uses platform-provided storage, security, and account features where available.
-        No method of storage or transmission is completely secure.
+        You are responsible for protecting access to your device, Apple ID, backups, and any files you export or share from OpenNote AI.
       </p>
-    </section>
+      <p>
+        No method of electronic storage or transmission is completely secure, but OpenNote AI works to protect user data using reasonable safeguards.
+      </p>
 
-    <section class="card">
       <h2>13. Children</h2>
       <p>
         OpenNote AI is not intended to knowingly collect personal information from children under 13.
+        If you believe a child has provided personal information through OpenNote AI, please contact us so we can review and take appropriate action.
       </p>
-    </section>
 
-    <section class="card">
-      <h2>14. Changes to This Privacy Policy</h2>
+      <h2>14. Changes to This Policy</h2>
       <p>
-        Updates to this policy will change the "Last updated" date at the top of this page.
+        We may update this Privacy Policy when OpenNote AI changes, when new features are added, or when legal requirements change.
+        The updated policy will be posted on this page with a new "Last updated" date.
       </p>
-    </section>
+      <p>
+        Material changes to privacy practices will also be reflected in the app and in App Store privacy information where required.
+      </p>
 
-    <section class="card">
-      <h2>15. Contact Us</h2>
+      <h2>15. Contact</h2>
       <p>
         For privacy questions, contact:
-        <a href="mailto:nickyang130@gmail.com">nickyang130@gmail.com</a>
+        <a href="mailto:klausorlando45@gmail.com">klausorlando45@gmail.com</a>
       </p>
     </section>
 
-    <p class="footer">OpenNote AI is local-first and designed to keep private user content under user control.</p>
+    <p class="footer">&copy; 2026 OpenNote AI. All rights reserved.</p>
   </main>
 </body>
 </html>
