@@ -1,124 +1,424 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OpenNote Terms of Use</title>
+  <title>OpenNote AI Terms of Use</title>
+  <meta name="description" content="Terms of Use for OpenNote AI, a local-first notes, recording, document, handwriting, and AI assistant app.">
   <style>
-    :root { color-scheme: light; --ink: #151518; --muted: #63636b; --line: #e8e8ed; --bg: #f7f7f9; --card: #ffffff; --accent: #6047ff; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); line-height: 1.65; }
-    main { max-width: 860px; margin: 0 auto; padding: 56px 22px 80px; }
-    .page { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 38px; box-shadow: 0 18px 50px rgba(20,20,30,.06); }
-    .brand { color: var(--accent); font-weight: 700; letter-spacing: .02em; text-transform: uppercase; font-size: 13px; margin: 0 0 10px; }
-    h1 { margin: 0 0 8px; font-size: 36px; line-height: 1.15; }
-    h2 { margin-top: 34px; font-size: 21px; }
-    p, li { font-size: 16px; color: #333; }
-    .meta { color: var(--muted); margin-top: 0; }
-    nav { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 34px; }
-    nav a { border: 1px solid var(--line); border-radius: 999px; padding: 8px 13px; text-decoration: none; color: var(--ink); background: #fafafe; }
-    a { color: var(--accent); }
-    ul { padding-left: 22px; }
-    @media (max-width: 640px) { main { padding-top: 28px; } .page { padding: 26px; border-radius: 14px; } h1 { font-size: 30px; } }
+    :root {
+      color-scheme: light dark;
+      --ink: #151518;
+      --muted: #63636b;
+      --line: #e8e8ed;
+      --bg: #f7f7f9;
+      --card: #ffffff;
+      --accent: #6047ff;
+      --soft-accent: rgba(96, 71, 255, 0.10);
+      --warning: #b45309;
+      --soft-warning: rgba(245, 158, 11, 0.12);
+      --shadow: rgba(20, 20, 30, 0.06);
+    }
+
+```
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f5f5f7;
+    --muted: #a1a1aa;
+    --line: rgba(255, 255, 255, 0.14);
+    --bg: #050507;
+    --card: #1c1c1e;
+    --accent: #9b8cff;
+    --soft-accent: rgba(155, 140, 255, 0.16);
+    --warning: #fbbf24;
+    --soft-warning: rgba(251, 191, 36, 0.14);
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 22px 80px;
+}
+
+.page {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 42px;
+  box-shadow: 0 18px 50px var(--shadow);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  background: var(--soft-accent);
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin: 0 0 14px;
+  padding: 6px 12px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  margin: 36px 0 12px;
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+p,
+li {
+  font-size: 16px;
+  color: var(--ink);
+}
+
+p {
+  margin: 10px 0;
+}
+
+.meta,
+.muted {
+  color: var(--muted);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 28px 0 34px;
+}
+
+nav a {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 13px;
+  text-decoration: none;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--card) 90%, var(--bg));
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  padding-left: 22px;
+  margin-top: 10px;
+}
+
+li {
+  margin: 7px 0;
+}
+
+.callout {
+  border-left: 4px solid var(--accent);
+  background: var(--soft-accent);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 16px 0;
+}
+
+.note {
+  border-left: 4px solid var(--warning);
+  background: var(--soft-warning);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 16px 0;
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 28px;
+}
+
+strong {
+  font-weight: 750;
+}
+
+@media (max-width: 640px) {
+  main {
+    padding: 28px 16px 56px;
+  }
+
+  .page {
+    padding: 26px;
+    border-radius: 16px;
+  }
+
+  nav {
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 7px 11px;
+  }
+}
+```
+
   </style>
 </head>
+
 <body>
   <main>
     <section class="page">
-      <p class="brand">OpenNote</p>
+      <p class="brand">OpenNote AI</p>
       <h1>Terms of Use</h1>
-      <p class="meta">Last updated: June 4, 2026</p>
+      <p class="meta">Last updated: June 13, 2026</p>
 
-      <nav aria-label="Legal pages">
-        <a href="./">Privacy Policy</a>
-        <a href="./terms.html">Terms of Use</a>
-        <a href="./support.html">Support</a>
-      </nav>
+```
+  <nav aria-label="Legal pages">
+    <a href="./">Privacy Policy</a>
+    <a href="./terms.html">Terms of Use</a>
+    <a href="./support.html">Support</a>
+  </nav>
 
-      <p>
-        These Terms of Use govern your access to and use of OpenNote. By using OpenNote, you agree
-        to these terms. If you do not agree, do not use the app.
-      </p>
+  <p>
+    These Terms of Use govern your access to and use of OpenNote AI. By using OpenNote AI,
+    you agree to these terms. If you do not agree, do not use the app.
+  </p>
 
-      <h2>1. App Purpose</h2>
-      <p>
-        OpenNote provides tools for notes, writing, document organization, audio recording,
-        transcription, translation, and local AI-assisted workflows. OpenNote is provided for
-        personal productivity and information management.
-      </p>
+  <h2>1. App Purpose</h2>
+  <p>
+    OpenNote AI provides tools for notes, writing, document organization, PDFs, handwriting,
+    audio recording, transcription, translation, and AI-assisted workflows. OpenNote AI is
+    provided for personal productivity, study, writing, and information management.
+  </p>
 
-      <h2>2. Your Content</h2>
-      <p>
-        You retain ownership of notes, recordings, transcripts, files, images, documents, and other
-        content that you create or import into OpenNote. You are responsible for the content you
-        store, export, share, or process with the app.
-      </p>
+  <h2>2. Your Content</h2>
+  <p>
+    You retain ownership of notes, recordings, transcripts, files, images, PDFs, documents,
+    handwriting, folders, and other content that you create or import into OpenNote AI.
+  </p>
+  <p>
+    You are responsible for the content you store, record, import, export, share, or process
+    with the app. You agree not to use OpenNote AI to create, store, process, or share content
+    that is illegal, harmful, infringing, abusive, or violates the rights of others.
+  </p>
 
-      <h2>3. Local AI and Model Downloads</h2>
-      <p>
-        OpenNote may allow you to download local AI model files from third-party model hosts or
-        mirrors. Model files may be subject to separate licenses or terms from their providers.
-        You are responsible for following those model licenses and any laws that apply in your
-        location.
-      </p>
-      <p>
-        AI-generated summaries, translations, transcripts, or suggestions may be incomplete or
-        inaccurate. You should review important output before relying on it.
-      </p>
+  <h2>3. Local-First AI</h2>
+  <div class="callout">
+    <p>
+      <strong>OpenNote AI is designed to be local-first. The current release does not send
+      your notes, documents, PDFs, recordings, handwriting, transcripts, prompts, or AI
+      conversations to third-party AI services.</strong>
+    </p>
+  </div>
+  <p>
+    AI-assisted features are designed to run on your device when available. OpenNote AI does
+    not use your notes, documents, PDFs, recordings, handwriting, transcripts, prompts, or AI
+    conversations to train third-party AI models.
+  </p>
+  <p>
+    If a future version of OpenNote AI adds an optional cloud AI feature that sends
+    user-selected content to a third-party AI service, the app will clearly explain what data
+    is sent, identify the service provider, and ask for your permission before sending that
+    content.
+  </p>
 
-      <h2>4. Audio Recording and Transcription</h2>
-      <p>
-        You are responsible for making sure you have permission to record audio, transcribe speech,
-        translate content, or process documents where required by law or by the rules of your
-        organization, school, or workplace.
-      </p>
+  <h2>4. Local AI Model Downloads</h2>
+  <p>
+    OpenNote AI may allow you to download optional local AI model files, such as
+    Gemma-compatible models, so that AI features can run on your device.
+  </p>
+  <p>
+    Local model files may be hosted by third-party model file hosts or mirrors, such as
+    Hugging Face, ModelScope, GitHub Releases, or another configured download source.
+    These hosts are used only to download model files.
+  </p>
+  <p>
+    Model file hosts may receive standard network information normally included in a download
+    request, such as IP address, request time, requested file URL, and normal browser, device,
+    or network metadata.
+  </p>
+  <p>
+    OpenNote AI does not send your notes, documents, PDFs, recordings, handwriting,
+    transcripts, prompts, or AI conversations to model file hosts.
+  </p>
+  <p>
+    Some model files may be subject to separate licenses or terms from their providers.
+    You are responsible for following those model licenses and any laws that apply in your
+    location.
+  </p>
 
-      <h2>5. In-App Purchases and Subscriptions</h2>
-      <p>
-        OpenNote may offer optional paid features, including OpenNote Plus. Purchases and
-        subscriptions are processed by Apple through the App Store. Subscription pricing, renewal,
-        cancellation, and refund handling are managed through your Apple ID and App Store settings.
-      </p>
-      <p>
-        Subscriptions automatically renew unless canceled at least 24 hours before the end of the
-        current period. You can manage or cancel subscriptions in your Apple account settings.
-      </p>
+  <h2>5. AI Output Accuracy</h2>
+  <p>
+    AI-generated summaries, translations, transcripts, document insights, organization
+    suggestions, or other outputs may be incomplete, inaccurate, or unsuitable for your
+    specific situation.
+  </p>
+  <p>
+    You should review important output before relying on it, especially for school, work,
+    business, legal, medical, financial, or other important decisions.
+  </p>
 
-      <h2>6. Acceptable Use</h2>
-      <p>You agree not to use OpenNote to:</p>
-      <ul>
-        <li>Violate applicable laws or the rights of others.</li>
-        <li>Store, generate, or share unlawful, harmful, or abusive content.</li>
-        <li>Reverse engineer, tamper with, or misuse the app beyond permitted law.</li>
-        <li>Misrepresent AI-generated output as verified professional advice.</li>
-      </ul>
+  <h2>6. Audio Recording, Transcription, and Translation</h2>
+  <p>
+    You are responsible for making sure you have permission to record audio, transcribe speech,
+    translate content, or process documents where required by law or by the rules of your
+    organization, school, workplace, or local jurisdiction.
+  </p>
+  <p>
+    OpenNote AI is not responsible for your failure to obtain required consent before recording,
+    transcribing, translating, storing, exporting, or sharing content.
+  </p>
 
-      <h2>7. No Professional Advice</h2>
-      <p>
-        OpenNote does not provide legal, medical, financial, or other professional advice. Any
-        organization, summary, translation, or AI output should be reviewed by a qualified person
-        before being used for important decisions.
-      </p>
+  <h2>7. Account and Sign in with Apple</h2>
+  <p>
+    OpenNote AI may allow you to sign in with Apple or use account-based features for sync,
+    subscription access, or account management.
+  </p>
+  <p>
+    If you sign in with Apple, account access is managed through Sign in with Apple and
+    OpenNote AI account features.
+  </p>
+  <p>
+    You can delete your OpenNote AI account directly inside the app:
+  </p>
+  <div class="callout">
+    <p><strong>Settings &gt; Account &gt; Delete Account</strong></p>
+  </div>
+  <p>
+    Deleting your account may remove account-related data and may affect account-based sync
+    or account-based app functionality. App Store subscriptions remain managed through your
+    Apple ID and Apple’s App Store subscription settings.
+  </p>
 
-      <h2>8. Availability and Changes</h2>
-      <p>
-        We may update, modify, suspend, or discontinue features as OpenNote evolves. Some features
-        may depend on device capability, operating system version, storage space, network access,
-        third-party model hosts, or Apple services.
-      </p>
+  <h2>8. In-App Purchases and Subscriptions</h2>
+  <p>
+    OpenNote AI may offer optional paid features, including OpenNote Plus and OpenNote Pro.
+    Purchases and subscriptions are processed by Apple through the App Store.
+  </p>
+  <p>
+    Subscription pricing, billing period, renewal, cancellation, refund handling, and payment
+    processing are subject to Apple’s App Store rules and your Apple ID settings.
+  </p>
+  <p>
+    Subscriptions automatically renew unless canceled at least 24 hours before the end of the
+    current billing period. Your Apple ID may be charged for renewal within 24 hours before the
+    end of the current period.
+  </p>
+  <p>
+    You can manage or cancel subscriptions in your Apple ID account settings:
+  </p>
+  <ul>
+    <li>Open the Settings app on your device.</li>
+    <li>Tap your Apple ID.</li>
+    <li>Tap Subscriptions.</li>
+    <li>Select OpenNote AI to manage or cancel your subscription.</li>
+  </ul>
+  <p>
+    If subscription access does not appear correctly in the app, open the subscription page in
+    OpenNote AI and tap Restore Purchases.
+  </p>
 
-      <h2>9. Disclaimer</h2>
-      <p>
-        OpenNote is provided on an "as is" and "as available" basis to the maximum extent permitted
-        by law. We do not guarantee that the app will be error-free, uninterrupted, or suitable for
-        every use case.
-      </p>
+  <h2>9. Acceptable Use</h2>
+  <p>You agree not to use OpenNote AI to:</p>
+  <ul>
+    <li>Violate applicable laws, regulations, or the rights of others.</li>
+    <li>Store, generate, process, export, or share unlawful, harmful, abusive, or infringing content.</li>
+    <li>Record, transcribe, translate, or share content without required consent.</li>
+    <li>Misrepresent AI-generated output as verified professional advice.</li>
+    <li>Attempt to reverse engineer, tamper with, disrupt, or misuse the app beyond what is permitted by law.</li>
+    <li>Bypass subscription access, licensing controls, security controls, or technical restrictions.</li>
+  </ul>
 
-      <h2>10. Contact</h2>
-      <p>
-        For terms or support questions, contact: <a href="mailto:klausorlando45@gmail.com">klausorlando45@gmail.com</a>
-      </p>
-    </section>
+  <h2>10. No Professional Advice</h2>
+  <p>
+    OpenNote AI does not provide legal, medical, financial, tax, investment, academic, or other
+    professional advice. Any note organization, summary, translation, transcription, AI output,
+    or document insight should be reviewed by a qualified person before being used for important
+    decisions.
+  </p>
+
+  <h2>11. Privacy</h2>
+  <p>
+    Your use of OpenNote AI is also governed by our Privacy Policy. The Privacy Policy explains
+    what information OpenNote AI handles and how it is protected.
+  </p>
+  <p>
+    You can review the Privacy Policy here:
+    <a href="./">Privacy Policy</a>
+  </p>
+
+  <h2>12. Availability and Changes</h2>
+  <p>
+    We may update, modify, suspend, or discontinue features as OpenNote AI evolves. Some features
+    may depend on device capability, operating system version, available storage space, Apple
+    services, App Store availability, or network access for model file downloads, account access,
+    subscription verification, or sync features.
+  </p>
+  <p>
+    We may also update these Terms from time to time. Updated Terms will be posted on this page
+    with a new “Last updated” date.
+  </p>
+
+  <h2>13. Disclaimer</h2>
+  <p>
+    OpenNote AI is provided on an “as is” and “as available” basis to the maximum extent permitted
+    by law. We do not guarantee that the app will be error-free, uninterrupted, always available,
+    or suitable for every use case.
+  </p>
+  <p>
+    You are responsible for keeping backup copies of important notes, documents, recordings,
+    transcripts, and files.
+  </p>
+
+  <h2>14. Limitation of Liability</h2>
+  <p>
+    To the maximum extent permitted by law, OpenNote AI and its developer will not be liable for
+    indirect, incidental, special, consequential, or punitive damages, or for loss of data, loss
+    of profits, business interruption, or loss of access arising from your use of or inability to
+    use the app.
+  </p>
+
+  <h2>15. Contact</h2>
+  <p>
+    For terms or support questions, contact:
+    <a href="mailto:klausorlando45@gmail.com">klausorlando45@gmail.com</a>
+  </p>
+</section>
+
+<p class="footer">© 2026 OpenNote AI. All rights reserved.</p>
+```
+
   </main>
 </body>
 </html>
