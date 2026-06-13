@@ -1,0 +1,11 @@
+OpenNote AI does not send users' notes, documents, PDFs, recordings, handwriting, transcripts, prompts, or AI conversations to any third-party AI service.
+
+We added a clear in-app explanation at:
+Settings > Privacy & AI Processing
+
+This screen explains that OpenNote AI is designed to be local-first and that private user content is not sent to third-party AI services.
+
+Optional local AI model downloads may contact model file hosts only to download model files. User notes, documents, recordings, handwriting, transcripts, prompts, and AI conversations are not sent to those model hosts.
+
+Sign in with Apple and subscription status are used only for account access, sync, and paid feature access. Users can delete their account in:
+Settings > Account > Delete Account.

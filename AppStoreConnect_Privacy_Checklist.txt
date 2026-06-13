@@ -1,0 +1,12 @@
+Before resubmission, App Store Connect > App Privacy should be checked so it matches the app and privacy policy.
+
+Review these categories:
+
+* Contact Info: email/name if Sign in with Apple is used
+* User Content: notes, documents, PDFs, audio recordings, handwriting, transcripts if synced or stored outside the device
+* Identifiers: app-specific user ID if account login exists
+* Purchases: subscription status if tracked for paid feature access
+* Diagnostics: crash logs/performance data if collected
+* Usage Data: analytics only if analytics SDK exists
+* Third-party AI sharing: No, if the release build does not send user content to third-party AI services
+* Tracking: No, if there are no advertising SDKs or cross-app tracking
